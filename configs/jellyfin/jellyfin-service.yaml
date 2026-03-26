@@ -1,0 +1,18 @@
+# jellyfin-service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jellyfin
+  namespace: servarr
+
+spec:
+  selector:
+    app: jellyfin
+
+  ports:
+    - name: web
+      port: 8096
+      targetPort: 8096
+
+  type: ClusterIP

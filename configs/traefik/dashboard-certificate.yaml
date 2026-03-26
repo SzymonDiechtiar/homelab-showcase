@@ -1,0 +1,20 @@
+# dashboard-certificate.yaml
+
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: traefik-dashboard-certificate
+  namespace: traefik
+
+spec:
+  # Secret where the TLS certificate will be stored
+  secretName: traefik-dashboard-certificate-secret
+
+  # Reference to the ClusterIssuer
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
+
+  # Domain for which the certificate is issued
+  dnsNames:
+    - traefik-dashboard.example.com

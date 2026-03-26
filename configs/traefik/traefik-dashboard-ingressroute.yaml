@@ -1,0 +1,26 @@
+# traefik-dashboard-ingressroute.yaml
+
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard-ingressroute
+  namespace: traefik
+
+spec:
+  # Expose Traefik dashboard via HTTP and HTTPS entrypoints
+  entryPoints:
+    - web
+    - websecure
+
+  routes:
+    # Route traffic based on hostname
+    - match: Host(`traefik-dashboard.example.com`)
+      kind: Rule
+      services:
+        # Internal Traefik dashboard service
+        - name: api@internal
+          kind: TraefikService
+
+  # TLS configuration using a pre-created certificate secret
+  tls:
+    secretName: traefik-dashboard-certificate-secret

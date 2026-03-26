@@ -1,0 +1,26 @@
+# cert-manager-clusterissuer.yaml
+
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: cloudflare-clusterissuer
+
+spec:
+  acme:
+    # Email used for Let's Encrypt registration (sanitized)
+    email: user@example.com
+
+    # Let's Encrypt production endpoint
+    server: https://acme-v02.api.letsencrypt.org/directory
+
+    # Secret used to store ACME account private key
+    privateKeySecretRef:
+      name: cloudflare-clusterissuer-account-key
+
+    solvers:
+      - dns01:
+          cloudflare:
+            # Reference to Cloudflare API token stored as a Kubernetes Secret
+            apiTokenSecretRef:
+              name: cloudflare-api-token-secret
+              key: api-token

@@ -1,0 +1,22 @@
+# nfs-pv.yaml
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv
+
+spec:
+  capacity:
+    storage: 3.5Ti
+
+  accessModes:
+    - ReadWriteMany
+
+  persistentVolumeReclaimPolicy: Retain
+
+  storageClassName: nfs
+
+  # External NFS storage (OpenMediaVault)
+  nfs:
+    server: 10.10.X.X  
+    path: /data
