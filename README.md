@@ -81,3 +81,11 @@ Basic security practices are implemented across the homelab environment:
 - **Intrusion prevention** – Fail2ban is used to protect services from brute-force attacks
 
 These measures provide a foundational level of security while maintaining flexibility for further improvements.
+
+## Notes
+
+This repository showcases selected parts of a real homelab environment, adapted and simplified to highlight key concepts in Linux administration, networking, and Kubernetes.
+
+---
+
+Thank you for reviewing this project.
