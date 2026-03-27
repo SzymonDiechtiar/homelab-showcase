@@ -1,3 +1,4 @@
+
 ## Overview
 
 This repository provides a high-level overview of my personal homelab environment, created to develop practical skills in Linux system administration, networking, and container orchestration.
@@ -5,6 +6,17 @@ This repository provides a high-level overview of my personal homelab environmen
 The lab is built on Proxmox VE hosts and a k3s Kubernetes cluster. It serves primarily as a learning platform, while also functioning as a home media server and VPN gateway.
 
 The goal of this project is to explore self-hosting, improve infrastructure management skills, and work towards greater digital independence.
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Infrastructure](#infrastructure)
+3. [Networking](#networking)
+4. [Kubernetes (k3s)](#kubernetes-k3s)
+5. [Services](#services)
+6. [Storage](#storage)
+7. [Security](#security)
+8. [Future Tools](#future-tools)
+9. [Notes](#notes)
 
 ## Infrastructure
 
@@ -19,7 +31,7 @@ Both machines are running Proxmox VE and are configured in a clustered setup, en
 
 *Proxmox VE UI showcasing the cluster setup*
 
-### Networking
+## Networking
 
 The homelab network is managed using a virtualized **pfSense** instance, which acts as the primary gateway and VPN server for the environment. pfSense ensures secure and efficient routing between VLANs and controls access to different services in the lab.
 
@@ -84,16 +96,6 @@ All externally accessible services are routed through Traefik and secured using 
 
 Example configurations for selected services can be found in the [`configs/`](./configs) directory.
 
-## Future Tools
-
-I am working towards implementing the following tools to enhance my homelab's functionality and automation:
-
-- **GitOps**: Managing Kubernetes deployments and infrastructure with Git, aiming for a more automated, version-controlled workflow.
-- **ArgoCD**: Continuous delivery tool for automating application deployments to Kubernetes clusters.
-- **Terraform**: Infrastructure as code (IaC) for automating the provisioning and management of cloud and on-premise resources.
-
-These tools will improve the management and scalability of my infrastructure and align with industry best practices for DevOps and cloud-native workflows.
-
 ## Storage
 
 Storage is managed using an OpenMediaVault virtual machine, backed by an array of 6 × 2TB drives.
@@ -117,6 +119,16 @@ Basic security practices are implemented across the homelab environment:
 - **Intrusion prevention** – Fail2ban is used to protect services from brute-force attacks
 
 These measures provide a foundational level of security while maintaining flexibility for further improvements.
+
+## Future Tools
+
+I am working towards implementing the following tools to enhance my homelab's functionality and automation:
+
+- **GitOps**: Managing Kubernetes deployments and infrastructure with Git, aiming for a more automated, version-controlled workflow.
+- **ArgoCD**: Continuous delivery tool for automating application deployments to Kubernetes clusters.
+- **Terraform**: Infrastructure as code (IaC) for automating the provisioning and management of cloud and on-premise resources.
+
+These tools will improve the management and scalability of my infrastructure and align with industry best practices for DevOps and cloud-native workflows.
 
 ## Notes
 
