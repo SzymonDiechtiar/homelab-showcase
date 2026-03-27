@@ -124,7 +124,7 @@ These measures provide a foundational level of security while maintaining flexib
 
 I am working towards implementing the following tools to enhance my homelab's functionality and automation:
 
-- **GitOps**: Managing Kubernetes deployments and infrastructure with Git, aiming for a more automated, version-controlled workflow.
+- **GitHub Actions**: Automating CI/CD workflows for Kubernetes deployments and infrastructure provisioning directly from GitHub repositories.
 - **ArgoCD**: Continuous delivery tool for automating application deployments to Kubernetes clusters.
 - **Terraform**: Infrastructure as code (IaC) for automating the provisioning and management of cloud and on-premise resources.
 
